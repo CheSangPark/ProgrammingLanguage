@@ -3,6 +3,8 @@ calculate(SIGMA(INT 1, ADD(X,X), X));;
 
 calculate(INTEGRAL(REAL 1.0, REAL (-5.0), X));;
 (*- : float = 12.3000000000000114*)
+
+(* TC added by JS YOO ========================================*)
  calculate(ADD(X,X));;
 (*Exception: FreeVariable.*)
  calculate(SIGMA(INT 1, ADD(X,X), X));;
@@ -47,3 +49,5 @@ calculate(INTEGRAL(REAL 1.0, REAL (-5.0), X));;
 
 calculate(INTEGRAL(SIGMA(INT 1, INT 10, MUL(MUL(X,X),X)), INTEGRAL(INT 1, INT 5, MUL(X,X)), ADD(X,X)));;
 (*- : float = -9148352.30399713665*)
+
+(*========================================*)

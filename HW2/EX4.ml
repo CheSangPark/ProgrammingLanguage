@@ -3,6 +3,8 @@ let (n, queue') = IntListQ.deQ (IntListQ.enQ(IntListQ.enQ(IntListQ.emptyQ, [1;2;
 val n : int list = [1; 2; 3] 
 val queue' : int list list * int list list = ([], [[4; 5]])
 *)
+
+(* TC added by JS YOO ========================================*)
 # let (n, que') = IntListQ.deQ(IntListQ.emptyQ);;
 (*Exception: IntListQ.EMPTY_Q.*)
 # let (que') = IntListQ.enQ(IntListQ.emptyQ, []);;
@@ -64,3 +66,5 @@ val queue' : int list list * int list list = ([], [[4; 5]])
 # let temp = IntListQ.enQ(fork', n);;
 (*val temp : IntListQ.queue =
   ([[3; 2]; [5; 4; 2]; [3; 2; 1]; [1]; [1; 2]; [1; 2; 3]], [])*)
+  
+(*==========================================================================++*)

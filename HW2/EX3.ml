@@ -12,9 +12,9 @@ findMin(merge (heap1, heap2));;
 
 (* TC added by JS YOO ========================================*)
  findMin(EMPTY);;
-Exception: EmptyHeap.
+(*Exception: EmptyHeap.*)
  deleteMin(EMPTY);;
-Exception: EmptyHeap.
+(* Exception: EmptyHeap. *)
  let one = insert(1, EMPTY);;
 (* val one : heap = NODE (0, 1, EMPTY, EMPTY)*)
  rank one;;

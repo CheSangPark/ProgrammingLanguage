@@ -8,7 +8,31 @@ let heap2 = NODE(0, 3, EMPTY, EMPTY) in
 findMin(merge (heap1, heap2));;
 (*- : value = 2*)
 
+(*function for verifying lefthip j*)
 
+let getval : heap -> value = fun x ->
+	match x with
+		| EMPTY -> -1999999999
+		| NODE (_, i, _, _) -> i
+
+let rec verfy : heap -> bool = fun x ->
+	match x with
+	|EMPTY -> true
+	|NODE (_, _, EMPTY, EMPTY) -> true
+	|NODE (_, _, EMPTY, NODE _) -> false
+	|NODE (_, _, NODE _ , EMPTY) -> true
+	| NODE (i, j, k, l) -> 
+		if ((verfy k) && (verfy l)=true) then
+			let lv= getval k in
+			let rv=getval l in
+			let lr=rank k in
+			let rr=rank l in
+			if ((j<=lv)&&(j<=rv))&&(lr>=rr) then true
+			else
+			false
+		else
+			false
+(********************************)
 
 (* TC added by JS YOO ========================================*)
  findMin(EMPTY);;
@@ -44,7 +68,7 @@ let ten = NODE (0, 10, EMPTY, EMPTY);;
 (* val temp' : heap =
   NODE (1, 1, NODE (0, 3, EMPTY, EMPTY), NODE (0, 5, EMPTY, EMPTY))*)
  let temp = merge(temp', four);; 
-(* val temp : heap = (*------------ You made a mistake here Yoo, this is not a left side heap!!*)
+(* val temp : heap =
   NODE (1, 1, NODE (0, 3, EMPTY, EMPTY),
    NODE (0, 4, NODE (0, 5, EMPTY, EMPTY), EMPTY))*)
  let temp' = merge(temp, seven);;

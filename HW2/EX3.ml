@@ -43,8 +43,8 @@ let ten = NODE (0, 10, EMPTY, EMPTY);;
  let temp' = merge(temp, five);;
 (* val temp' : heap =
   NODE (1, 1, NODE (0, 3, EMPTY, EMPTY), NODE (0, 5, EMPTY, EMPTY))*)
- let temp = merge(temp', four);;
-(* val temp : heap =
+ let temp = merge(temp', four);; 
+(* val temp : heap = (*------------ You made a mistake here Yoo, this is not a left side heap!!*)
   NODE (1, 1, NODE (0, 3, EMPTY, EMPTY),
    NODE (0, 4, NODE (0, 5, EMPTY, EMPTY), EMPTY))*)
  let temp' = merge(temp, seven);;

@@ -1,6 +1,8 @@
 let exp =SUM ([TIMES [CONST 5; TIMES([VAR "x";VAR "x"])]; CONST 1]) in 
  diff(exp, "x");;
  (* - : ae =SUM [TIMES [CONST 5; SUM [TIMES [CONST 1; TIMES [VAR "x"]]; TIMES [VAR "x"; CONST 1]]]; CONST 0] *)
+ 
+ (* TC added by JS YOO ========================================*)
 diff(TIMES[VAR "X"; VAR "Y"; VAR "Z"; CONST 5],"X");;
 (* 5yz*)
 diff(POWER("XY", 5), "X");;
@@ -25,3 +27,4 @@ diff(TIMES[SUM[VAR "X";VAR"Y"];VAR "X";VAR"Y";CONST 10;POWER("Z",4)],"X");;
 (*10yz^4 (2x + y)*)
 diff(SUM[VAR "X";VAR "Y"; TIMES[CONST 2; POWER("X",4)];CONST 2],"X");;
 (* 1 + 8x^3 *)
+(* ========================================*)

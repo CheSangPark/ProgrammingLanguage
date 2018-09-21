@@ -51,3 +51,5 @@ calculate(INTEGRAL(SIGMA(INT 1, INT 10, MUL(MUL(X,X),X)), INTEGRAL(INT 1, INT 5,
 (*- : float = -9148352.30399713665*)
 
 (*========================================*)
+let a =  calculate(SIGMA(SIGMA(INT 1, INT 1, X), SIGMA(INT 10, INT 10, X), SUB(MUL(X, X), INT 1)));;
+(*- : float = 조교 테케와 같은 값이 나와야합니다.*)

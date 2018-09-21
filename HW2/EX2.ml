@@ -30,3 +30,12 @@ diff(TIMES[SUM[VAR "X";VAR"Y"];VAR "X";VAR"Y";CONST 10;POWER("Z",4)],"X");;
 diff(SUM[VAR "X";VAR "Y"; TIMES[CONST 2; POWER("X",4)];CONST 2],"X");;
 (* 1 + 8x^3 *)
 (* ========================================*)
+
+(*============================================*)
+diff(POWER("X", 0), "X");;
+(* - : ae = CONST 0*)
+diff(SUM[POWER("X", 2);POWER("X", 1); POWER("X", 0)], "X");;
+(* - : ae =
+SUM
+ [TIMES [CONST 2; POWER ("X", 1)];
+  SUM [TIMES [CONST 1; POWER ("X", 0)]; CONST 0]] *)

@@ -8,7 +8,7 @@ diff(TIMES[VAR "X"; VAR "Y"; VAR "Z"; CONST 5],"X");;
 diff(POWER("XY", 5), "X");;
 (*0*)
 diff(POWER("XY", 5), "XY");;
-(*5*)
+(*5(xy)^4*)
 diff(diff(diff(diff(diff(POWER("X",5),"X"),"X"),"X"),"X"),"X");;
 (*120*)
 diff(diff(diff(diff(POWER("X",5),"X"),"X"),"X"),"X");;
